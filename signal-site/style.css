@@ -1,0 +1,44 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#0e1022;--pn:#171a34;--ink:#e6e6ff;--dim:#8087c0;--hot:#ff4d8d;--cy:#4de1ff}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#eef0ff;--pn:#fff;--ink:#14163a;--dim:#5a5f94;--hot:#c4155a;--cy:#0a7aa0}}
+:root[data-theme="light"]{--bg:#eef0ff;--pn:#fff;--ink:#14163a;--dim:#5a5f94;--hot:#c4155a;--cy:#0a7aa0}
+:root[data-theme="dark"]{--bg:#0e1022;--pn:#171a34;--ink:#e6e6ff;--dim:#8087c0;--hot:#ff4d8d;--cy:#4de1ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "IBM Plex Mono",monospace}
+main{max-width:860px;margin:0 auto;padding:40px 18px 60px}
+h1{font:700 clamp(34px,8vw,64px)/1.02 "Space Grotesk",sans-serif;margin:0 0 14px;letter-spacing:-.02em}
+h3{font:700 16px "Space Grotesk",sans-serif;margin:22px 0 6px;color:var(--cy)}
+p{margin:0 0 10px}
+.lead{max-width:56ch;color:var(--dim)}
+.trk{display:flex;align-items:center;gap:14px;margin:22px 0 34px;flex-wrap:wrap}
+#sl span{font-size:26px;color:var(--dim);margin-right:6px}#sl span.on{color:var(--hot)}
+.btn{background:transparent;color:var(--ink);border:1px solid var(--dim);font:inherit;font-size:13px;padding:6px 14px;cursor:pointer}
+.btn:hover,.btn:focus-visible{background:var(--ink);color:var(--bg);outline:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.tile{background:var(--pn);border:0;border-left:4px solid var(--hot);color:inherit;text-align:left;padding:18px;font:inherit;cursor:pointer;min-height:100px;display:block;width:100%}
+.tile:nth-child(even){border-left-color:var(--cy)}
+.tile:hover,.tile:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.tile b{display:block;font:700 18px "Space Grotesk",sans-serif}.tile small{color:var(--dim)}
+@media(min-width:640px){.tile:first-child{grid-column:span 2}}
+footer{margin-top:40px;color:var(--dim);font-size:12px}
+#ov,#fin{position:fixed;inset:0;background:rgba(5,6,16,.82);display:flex;align-items:center;justify-content:center;padding:calc(12px + env(safe-area-inset-top,0px)) 12px calc(12px + env(safe-area-inset-bottom,0px));z-index:5}
+[hidden]{display:none!important}
+.win{background:var(--pn);width:min(640px,100%);max-height:100%;overflow:auto;border:1px solid var(--dim)}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;border-bottom:1px solid var(--dim);position:sticky;top:0;background:var(--pn);font-weight:600}
+#wb{padding:16px}
+.stamp{border:2px solid var(--hot);color:var(--hot);background:transparent;font:inherit;font-weight:600;padding:2px 10px;transform:rotate(-3deg);cursor:pointer;margin-bottom:12px}
+.m{display:grid;grid-template-columns:130px 1fr 44px;gap:8px;align-items:center;font-size:13px;margin:3px 0}
+.m i{height:8px;border:1px solid var(--dim);background:linear-gradient(90deg,var(--hot) var(--w),transparent var(--w))}
+.m em{font-style:normal;text-align:right}
+ul{margin:0;padding-left:18px}li{margin:3px 0}
+.tl{display:flex;gap:8px;margin-top:8px;color:var(--cy)}
+input{flex:1;min-width:0;background:transparent;border:0;border-bottom:1px solid var(--dim);color:var(--ink);font:inherit;padding:4px 0;outline:0}
+input:focus{border-bottom-color:var(--cy)}
+.l{white-space:pre-wrap;margin:0 0 4px}
+canvas{display:block;max-width:100%;margin:0 auto 10px}
+.ph{display:inline-block;width:30%;min-width:100px;height:90px;border:1px dashed var(--dim);margin:0 6px 6px 0;text-align:center;line-height:90px;color:var(--dim);font-size:12px}
+.cipher{font:700 22px "Space Grotesk",sans-serif;letter-spacing:.12em;color:var(--hot);margin:12px 0}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--hot);color:#fff;padding:8px 16px;z-index:9;max-width:90vw;font-weight:600}
+#fin{flex-direction:column;text-align:center;background:var(--bg);z-index:8}
+@media (prefers-reduced-motion:no-preference){h1{animation:gl 1.4s steps(1) 1}@keyframes gl{0%,30%{text-shadow:3px 0 var(--hot),-3px 0 var(--cy);transform:translateX(2px)}15%{text-shadow:-4px 0 var(--hot),4px 0 var(--cy)}31%,100%{text-shadow:none;transform:none}}}
